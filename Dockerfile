@@ -1,25 +1,29 @@
 FROM python:3.11-slim
 
-# Dependências do WeasyPrint
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    libpango-1.0-0 \
-    libpangoft2-1.0-0 \
-    libgdk-pixbuf2.0-0 \
-    libffi-dev \
-    libcairo2 \
-    libxml2 \
-    libxslt1.1 \
-    libjpeg62-turbo \
-    && apt-get clean
+# Instala dependências do sistema e do LibreOffice
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libreoffice \
+    curl \
+    unzip \
+    libglib2.0-0 \
+    libsm6 \
+    libxext6 \
+    libxrender1 \
+    fonts-dejavu-core \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
 
+# Define diretório de trabalho
 WORKDIR /app
 
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
-
+# Copia os arquivos do projeto
 COPY . .
 
+# Instala as dependências do Python
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Expõe a porta 5000 (usada pelo Flask)
 EXPOSE 5000
 
+# Comando para iniciar o Flask
 CMD ["python", "app.py"]
