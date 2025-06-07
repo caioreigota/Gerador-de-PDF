@@ -1,0 +1,5 @@
+[phases.setup]
+nixPkgs = ["python312", "cairo", "pango", "gdk-pixbuf", "glib", "gobject-introspection"]
+
+[start]
+cmd = "python app.py"
