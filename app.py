@@ -9,12 +9,14 @@ from pptx import Presentation
 from PIL import Image, ImageDraw
 from io import BytesIO
 import subprocess
+import gc
 from werkzeug.utils import secure_filename
+from urllib.parse import urlparse, unquote
 
 app = Flask(__name__)
+app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # Limite de 50MB por upload
 
 
-# === PDF ===
 def substituir_textos(doc, substituicoes):
     for page in doc:
         blocks = page.get_text("dict")["blocks"]
@@ -45,9 +47,6 @@ def substituir_textos(doc, substituicoes):
                                 fontname="helv"
                             )
 
-from urllib.parse import urlparse, unquote
-import os
-
 @app.route('/pdf-para-imagem', methods=['POST'])
 def pdf_para_imagem():
     data = request.get_json()
@@ -55,36 +54,38 @@ def pdf_para_imagem():
         return {'error': 'pdf_url é obrigatório'}, 400
 
     try:
-        # Baixar o PDF
         response = requests.get(data['pdf_url'])
         response.raise_for_status()
     except Exception as e:
         return {'error': f'Erro ao baixar PDF: {str(e)}'}, 400
 
     try:
-        # Extrair nome do PDF da URL
         parsed_url = urlparse(data['pdf_url'])
         pdf_filename = os.path.basename(parsed_url.path)
         pdf_filename = unquote(pdf_filename)
         nome_base = os.path.splitext(pdf_filename)[0]
         nome_imagem = f"{nome_base}.png"
 
-        # Abrir PDF e renderizar primeira página
         doc = fitz.open(stream=response.content, filetype="pdf")
         if len(doc) == 0:
             return {'error': 'PDF sem páginas'}, 400
 
         page = doc[0]
-        pix = page.get_pixmap(dpi=200)
+        pix = page.get_pixmap(dpi=150)
 
-        with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as tmp_img:
-            tmp_img.write(pix.tobytes("png"))
-            return send_file(
-                tmp_img.name,
-                mimetype="image/png",
-                as_attachment=True,
-                download_name=nome_imagem
-            )
+        img_bytes = BytesIO()
+        img_bytes.write(pix.tobytes("png"))
+        img_bytes.seek(0)
+
+        doc.close()
+        gc.collect()
+
+        return send_file(
+            img_bytes,
+            mimetype="image/png",
+            as_attachment=True,
+            download_name=nome_imagem
+        )
 
     except Exception as e:
         return {'error': f'Erro ao processar PDF: {str(e)}'}, 500
@@ -111,13 +112,9 @@ def preencher_pdf_url():
         substituir_textos(doc, substituicoes)
 
         with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp_out:
-            doc.save(tmp_out.name, 
-                deflate=True,            # compacta os objetos
-                garbage=4,               # remove objetos não usados
-                clean=True,              # limpa stream desnecessário
-                incremental=False,       # salva como novo arquivo, não incremental
-                linear=True              # otimiza para leitura progressiva (web)
-            )
+            doc.save(tmp_out.name, deflate=True, garbage=4, clean=True)
+            doc.close()
+            gc.collect()
             return send_file(
                 tmp_out.name,
                 mimetype="application/pdf",
@@ -141,15 +138,12 @@ def pptx_para_imagens():
         return {'error': f'Erro ao baixar PPTX: {str(e)}'}, 400
 
     try:
-        # Salvar o arquivo temporariamente
         with tempfile.NamedTemporaryFile(delete=False, suffix=".pptx") as tmp_pptx:
             tmp_pptx.write(response.content)
             pptx_path = tmp_pptx.name
 
-        # Criar diretório para imagens
         output_dir = tempfile.mkdtemp()
 
-        # Executar conversão com LibreOffice
         subprocess.run([
             "libreoffice",
             "--headless",
@@ -158,13 +152,14 @@ def pptx_para_imagens():
             pptx_path
         ], check=True)
 
-        # Compactar imagens em ZIP
         zip_path = os.path.join(output_dir, "slides.zip")
         with zipfile.ZipFile(zip_path, 'w') as zipf:
             for file_name in sorted(os.listdir(output_dir)):
                 if file_name.endswith(".png"):
                     file_path = os.path.join(output_dir, file_name)
                     zipf.write(file_path, arcname=file_name)
+
+        gc.collect()
 
         return send_file(
             zip_path,
@@ -179,7 +174,6 @@ def pptx_para_imagens():
         return {'error': f'Erro ao processar PPTX: {str(e)}'}, 500
 
 
-# === PPTX PARA PDF ===
 @app.route('/pptx-para-pdf', methods=['POST'])
 def pptx_para_pdf():
     data = request.get_json()
@@ -199,6 +193,7 @@ def pptx_para_pdf():
             pptx_path = tmp_pptx.name
 
         prs = Presentation(pptx_path)
+        imagens = []
         for slide in prs.slides:
             for shape in slide.shapes:
                 if shape.has_text_frame:
@@ -209,8 +204,7 @@ def pptx_para_pdf():
                                 if marcador in run.text:
                                     run.text = run.text.replace(marcador, valor)
 
-        imagens_paths = []
-        for idx, slide in enumerate(prs.slides):
+        for slide in prs.slides:
             img = Image.new("RGB", (1280, 720), color="white")
             draw = ImageDraw.Draw(img)
             y = 20
@@ -218,18 +212,21 @@ def pptx_para_pdf():
                 if shape.has_text_frame:
                     draw.text((20, y), shape.text, fill="black")
                     y += 30
-            img_path = f"/tmp/slide_{idx + 1}.png"
-            img.save(img_path)
-            imagens_paths.append(img_path)
+            img_bytes = BytesIO()
+            img.save(img_bytes, format="PNG", optimize=True)
+            img_bytes.seek(0)
+            imagens.append(img_bytes)
 
-        pdf_path = "/tmp/slides_convertidos.pdf"
+        pdf_path = tempfile.NamedTemporaryFile(delete=False, suffix=".pdf").name
         doc = fitz.open()
-        for img_path in imagens_paths:
-            img = Image.open(img_path)
+        for img_bytes in imagens:
+            img = Image.open(img_bytes)
             rect = fitz.Rect(0, 0, img.width, img.height)
             page = doc.new_page(width=img.width, height=img.height)
-            page.insert_image(rect, filename=img_path)
+            page.insert_image(rect, stream=img_bytes.read())
         doc.save(pdf_path)
+        doc.close()
+        gc.collect()
 
         return send_file(
             pdf_path,
