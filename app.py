@@ -45,6 +45,51 @@ def substituir_textos(doc, substituicoes):
                                 fontname="helv"
                             )
 
+from urllib.parse import urlparse, unquote
+import os
+
+@app.route('/pdf-para-imagem', methods=['POST'])
+def pdf_para_imagem():
+    data = request.get_json()
+    if not data or 'pdf_url' not in data:
+        return {'error': 'pdf_url é obrigatório'}, 400
+
+    try:
+        # Baixar o PDF
+        response = requests.get(data['pdf_url'])
+        response.raise_for_status()
+    except Exception as e:
+        return {'error': f'Erro ao baixar PDF: {str(e)}'}, 400
+
+    try:
+        # Extrair nome do PDF da URL
+        parsed_url = urlparse(data['pdf_url'])
+        pdf_filename = os.path.basename(parsed_url.path)
+        pdf_filename = unquote(pdf_filename)
+        nome_base = os.path.splitext(pdf_filename)[0]
+        nome_imagem = f"{nome_base}.png"
+
+        # Abrir PDF e renderizar primeira página
+        doc = fitz.open(stream=response.content, filetype="pdf")
+        if len(doc) == 0:
+            return {'error': 'PDF sem páginas'}, 400
+
+        page = doc[0]
+        pix = page.get_pixmap(dpi=200)
+
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as tmp_img:
+            tmp_img.write(pix.tobytes("png"))
+            return send_file(
+                tmp_img.name,
+                mimetype="image/png",
+                as_attachment=True,
+                download_name=nome_imagem
+            )
+
+    except Exception as e:
+        return {'error': f'Erro ao processar PDF: {str(e)}'}, 500
+
+
 @app.route('/preencher-pdf-url', methods=['POST'])
 def preencher_pdf_url():
     data = request.get_json()
