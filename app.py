@@ -16,10 +16,11 @@ from urllib.parse import urlparse, unquote
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # Limite de 50MB por upload
 
-
 def substituir_textos(doc, substituicoes):
     for page in doc:
         insercoes = []
+        aplicar_redaction = False
+
         blocks = page.get_text("dict")["blocks"]
         for block in blocks:
             for line in block.get("lines", []):
@@ -28,13 +29,7 @@ def substituir_textos(doc, substituicoes):
                     for chave, novo_valor in substituicoes.items():
                         marcador = f"[{chave}]"
                         if marcador in texto_original:
-                            margem = 0.5
-                            bbox = (
-                                span["bbox"][0] - margem,
-                                span["bbox"][1] - margem,
-                                span["bbox"][2] + margem,
-                                span["bbox"][3] + margem
-                            )
+                            bbox = span["bbox"]
                             tamanho = span["size"]
                             cor_int = span["color"]
                             r = (cor_int >> 16) & 255
@@ -42,16 +37,21 @@ def substituir_textos(doc, substituicoes):
                             b = cor_int & 255
                             cor = (r / 255, g / 255, b / 255)
 
+                            # Marcar para redaction
                             page.add_redact_annot(bbox, fill=(1, 1, 1), cross_out=False)
+                            aplicar_redaction = True
 
                             novo_texto = texto_original.replace(marcador, novo_valor)
                             insercoes.append((bbox, novo_texto, tamanho, cor))
 
-        page.apply_redactions()
+        if aplicar_redaction:
+            page.apply_redactions()
 
         for bbox, texto, tamanho, cor in insercoes:
+            x = bbox[0]
+            y = bbox[1] + tamanho * 0.8  # ajuste fino vertical
             page.insert_text(
-                (bbox[0], bbox[1] + tamanho),
+                (x, y),
                 texto,
                 fontsize=tamanho,
                 color=cor,
