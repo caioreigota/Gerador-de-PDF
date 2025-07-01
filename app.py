@@ -19,6 +19,7 @@ app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # Limite de 50MB por upload
 
 def substituir_textos(doc, substituicoes):
     for page in doc:
+        insercoes = []
         blocks = page.get_text("dict")["blocks"]
         for block in blocks:
             for line in block.get("lines", []):
@@ -36,16 +37,21 @@ def substituir_textos(doc, substituicoes):
                             cor = (r / 255, g / 255, b / 255)
 
                             page.add_redact_annot(bbox, fill=(1, 1, 1))
-                            page.apply_redactions()
 
                             novo_texto = texto_original.replace(marcador, novo_valor)
-                            page.insert_text(
-                                (bbox[0], bbox[1] + tamanho),
-                                novo_texto,
-                                fontsize=tamanho,
-                                color=cor,
-                                fontname="helv"
-                            )
+                            insercoes.append((bbox, novo_texto, tamanho, cor))
+
+        page.apply_redactions()
+
+        for bbox, texto, tamanho, cor in insercoes:
+            page.insert_text(
+                (bbox[0], bbox[1] + tamanho),
+                texto,
+                fontsize=tamanho,
+                color=cor,
+                fontname="helv",
+                overlay=True,
+            )
 
 @app.route('/pdf-para-imagem', methods=['POST'])
 def pdf_para_imagem():
