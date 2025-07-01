@@ -36,30 +36,21 @@ def substituir_textos(doc, substituicoes):
                             b = cor_int & 255
                             cor = (r / 255, g / 255, b / 255)
 
-                            # Expande o bbox para garantir que o redator cubra bem o texto original
-                            margem = 1.0
-                            bbox_expandido = (
-                                bbox[0] - margem,
-                                bbox[1] - margem,
-                                bbox[2] + margem,
-                                bbox[3] + margem
-                            )
-                            page.add_redact_annot(bbox_expandido, fill=(1, 1, 1), cross_out=False)
+                            page.add_redact_annot(bbox, fill=(1, 1, 1), cross_out=False)
 
                             novo_texto = texto_original.replace(marcador, novo_valor)
-                            insercoes.append((bbox_expandido, novo_texto, tamanho, cor))
+                            insercoes.append((bbox, novo_texto, tamanho, cor))
 
         page.apply_redactions()
 
         for bbox, texto, tamanho, cor in insercoes:
-            rect = fitz.Rect(bbox)
-            page.insert_textbox(
-                rect,
+            page.insert_text(
+                (bbox[0], bbox[1] + tamanho),
                 texto,
                 fontsize=tamanho,
-                fontname="helv",
                 color=cor,
-                align=0,  # alinhamento à esquerda
+                fontname="helv",
+                overlay=True,
             )
 
 @app.route('/pdf-para-imagem', methods=['POST'])
