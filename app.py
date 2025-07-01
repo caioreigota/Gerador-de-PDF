@@ -36,7 +36,7 @@ def substituir_textos(doc, substituicoes):
                             b = cor_int & 255
                             cor = (r / 255, g / 255, b / 255)
 
-                            page.add_redact_annot(bbox, fill=(1, 1, 1))
+                            page.add_redact_annot(bbox, fill=(1, 1, 1), cross_out=False)
 
                             novo_texto = texto_original.replace(marcador, novo_valor)
                             insercoes.append((bbox, novo_texto, tamanho, cor))
