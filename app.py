@@ -28,7 +28,13 @@ def substituir_textos(doc, substituicoes):
                     for chave, novo_valor in substituicoes.items():
                         marcador = f"[{chave}]"
                         if marcador in texto_original:
-                            bbox = span["bbox"]
+                            margem = 0.5
+                            bbox = (
+                                span["bbox"][0] - margem,
+                                span["bbox"][1] - margem,
+                                span["bbox"][2] + margem,
+                                span["bbox"][3] + margem
+                            )
                             tamanho = span["size"]
                             cor_int = span["color"]
                             r = (cor_int >> 16) & 255
