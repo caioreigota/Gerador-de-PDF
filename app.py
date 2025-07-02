@@ -12,6 +12,8 @@ import subprocess
 import gc
 from werkzeug.utils import secure_filename
 from urllib.parse import urlparse, unquote
+from PIL import ImageFont
+import imgkit
 
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # Limite de 50MB por upload
@@ -135,7 +137,117 @@ def preencher_pdf_url():
             )
     except Exception as e:
         return {'error': f'Erro ao processar PDF: {str(e)}'}, 500
+    
 
+@app.route('/preencher-html-url', methods=['POST'])
+def preencher_html_url():
+    data = request.get_json()
+    if not data or 'html_url' not in data or 'substituicoes' not in data:
+        return {'error': 'html_url e substituicoes são obrigatórios'}, 400
+
+    try:
+        response = requests.get(data['html_url'])
+        response.raise_for_status()
+        html = response.text
+    except Exception as e:
+        return {'error': f'Erro ao baixar HTML: {str(e)}'}, 400
+
+    substituicoes = data['substituicoes']
+    if not isinstance(substituicoes, dict) or not substituicoes:
+        return {'error': 'Substituições inválidas ou vazias'}, 400
+
+    try:
+        for chave, valor in substituicoes.items():
+            html = html.replace(f"{{{{ {chave} }}}}", valor)
+
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as img_file:
+            imgkit.from_string(html, img_file.name, options={"format": "png", "width": 1080, "height": 1080})
+            return send_file(
+                img_file.name,
+                mimetype="image/png",
+                as_attachment=True,
+                download_name="imagem_gerada.png"
+            )
+    except Exception as e:
+        return {'error': f'Erro ao processar HTML: {str(e)}'}, 500
+
+@app.route('/gerar-imagem-vaga', methods=['POST'])
+def gerar_imagem_vaga():
+    def draw_text_wrap(draw, text, font, max_width, x, y, line_spacing=10):
+        words = text.split()
+        line = ""
+        lines = []
+        for word in words:
+            test_line = f"{line} {word}".strip()
+            width, _ = draw.textsize(test_line, font=font)
+            if width <= max_width:
+                line = test_line
+            else:
+                lines.append(line)
+                line = word
+        lines.append(line)
+
+        for i, line in enumerate(lines):
+            draw.text((x, y + i * (font.size + line_spacing)), line, font=font, fill="black")
+
+    data = request.get_json()
+    if not data or 'pdf_url' not in data or 'substituicoes' not in data:
+        return {'error': 'pdf_url e substituicoes são obrigatórios'}, 400
+
+    try:
+        response = requests.get(data['pdf_url'])
+        response.raise_for_status()
+    except Exception as e:
+        return {'error': f'Erro ao baixar PDF: {str(e)}'}, 400
+
+    try:
+        doc = fitz.open(stream=response.content, filetype="pdf")
+        page = doc[0]
+        pix = page.get_pixmap(dpi=300)
+        img = Image.open(BytesIO(pix.tobytes("png"))).convert("RGB")
+        draw = ImageDraw.Draw(img)
+
+        # Fonte segura para ambientes Linux/Docker
+        try:
+            font_padrao = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", size=28)
+        except:
+            font_padrao = ImageFont.load_default()
+
+        campos = data["substituicoes"]
+
+        # Coordenadas ajustadas com base no modelo
+        coordenadas = {
+            "cargo": (130, 420),
+            "complemento": (130, 470),
+            "Requisito 1": (130, 540),
+            "Requisito 2": (130, 580),
+            "Requisito 3": (130, 620),
+            "Requisito 4": (130, 660),
+            "Requisito 5": (130, 700),
+            "localizacao": (200, 820),
+            "modalidade": (530, 820)
+        }
+
+        for chave, pos in coordenadas.items():
+            texto = campos.get(chave, "")
+            if texto:
+                draw_text_wrap(draw, texto, font_padrao, max_width=580, x=pos[0], y=pos[1])
+
+        img_bytes = BytesIO()
+        img.save(img_bytes, format="PNG")
+        img_bytes.seek(0)
+        doc.close()
+        gc.collect()
+
+        return send_file(
+            img_bytes,
+            mimetype="image/png",
+            as_attachment=True,
+            download_name="vaga_preenchida.png"
+        )
+
+    except Exception as e:
+        return {'error': f'Erro ao gerar imagem: {str(e)}'}, 500
 
 @app.route('/pptx-para-imagens', methods=['POST'])
 def pptx_para_imagens():

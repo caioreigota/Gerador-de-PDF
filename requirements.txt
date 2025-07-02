@@ -3,3 +3,4 @@ PyMuPDF==1.23.22
 requests==2.31.0
 python-pptx==0.6.21
 Pillow==10.3.0
+imgkit==1.2.1

@@ -1,17 +1,18 @@
 FROM python:3.11-slim
 
 # Instala dependências do sistema e do LibreOffice
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    libreoffice \
-    curl \
-    unzip \
-    libglib2.0-0 \
-    libsm6 \
-    libxext6 \
+RUN apt-get update && apt-get install -y \
+    wkhtmltopdf \
+    xfonts-base \
+    libjpeg62-turbo \
     libxrender1 \
-    fonts-dejavu-core \
- && apt-get clean \
- && rm -rf /var/lib/apt/lists/*
+    libxtst6 \
+    libxext6 \
+    libfontconfig1 \
+    libfreetype6 \
+    libpng16-16 \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 # Define diretório de trabalho
 WORKDIR /app
