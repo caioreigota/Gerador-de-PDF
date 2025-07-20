@@ -359,6 +359,7 @@ def cortar_redimensionar_imagem():
     try:
         img_file = request.files['image']
         img = Image.open(img_file.stream).convert('RGB')
+        background_color = img.getpixel((0, 0))
 
         def crop_blank_top_bottom(im, threshold=250, blank_ratio=0.99):
             gray = im.convert('L')
@@ -382,11 +383,15 @@ def cortar_redimensionar_imagem():
 
         img = crop_blank_top_bottom(img)
 
-        img = ImageOps.fit(img, (largura, altura), method=Image.LANCZOS, centering=(0.5, 0.5))
+        img.thumbnail((largura, altura), Image.LANCZOS)
+
+        background = Image.new("RGB", (largura, altura), background_color)
+        offset = ((largura - img.size[0]) // 2, (altura - img.size[1]) // 2)
+        background.paste(img, offset)
 
         output = BytesIO()
         formato = img_file.mimetype.split('/')[-1].upper() if img_file.mimetype else 'PNG'
-        img.save(output, format=formato)
+        background.save(output, format=formato)
         output.seek(0)
 
         mimetype = img_file.mimetype or f'image/{formato.lower()}'
