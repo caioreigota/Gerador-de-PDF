@@ -1,0 +1,16 @@
+name: Trigger EasyPanel Deploy on PR
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened] # dispara ao criar, atualizar ou reabrir PR
+    branches:
+      - main  # ou substitua pela sua branch de destino do PR
+
+jobs:
+  call-deploy-hook:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger EasyPanel deploy
+        run: |
+          curl -X POST http://89.117.151.155:3000/api/deploy/3c508afc3f48f2a3251cf2fcfc605b0962fc33848c19c8ad
