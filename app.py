@@ -403,12 +403,14 @@ def cortar_redimensionar_imagem():
 
         img = crop_blank_top_bottom(img)
 
+
         width, height = img.size
         left = max(0, min(left, width - 1))
         top = max(0, min(top, height - 1))
         right = max(0, min(right, width - left - 1))
         bottom = max(0, min(bottom, height - top - 1))
         img = img.crop((left, top, width - right, height - bottom))
+
 
         img.thumbnail((largura, altura), Image.LANCZOS)
 
