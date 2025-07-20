@@ -345,16 +345,36 @@ def cortar_redimensionar_imagem():
 
     largura = request.form.get('largura') or request.form.get('width')
     altura = request.form.get('altura') or request.form.get('height')
+    top = request.form.get('top') or request.form.get('crop_top') or '0'
+    right = request.form.get('right') or request.form.get('crop_right') or '0'
+    left = request.form.get('left') or request.form.get('crop_left') or '0'
+    bottom = (
+        request.form.get('bottom')
+        or request.form.get('footer')
+        or request.form.get('crop_bottom')
+        or '0'
+    )
     if not largura or not altura:
         return {'error': 'Largura e altura são obrigatórios'}, 400
 
     try:
         largura = int(largura)
         altura = int(altura)
-        if largura <= 0 or altura <= 0:
+        top = int(top)
+        right = int(right)
+        left = int(left)
+        bottom = int(bottom)
+        if (
+            largura <= 0
+            or altura <= 0
+            or top < 0
+            or right < 0
+            or left < 0
+            or bottom < 0
+        ):
             raise ValueError
     except ValueError:
-        return {'error': 'Largura e altura devem ser números inteiros positivos'}, 400
+        return {'error': 'Parâmetros de corte devem ser inteiros não negativos e largura/altura positivos'}, 400
 
     try:
         img_file = request.files['image']
@@ -382,6 +402,15 @@ def cortar_redimensionar_imagem():
             return im.crop((0, top, width, bottom + 1))
 
         img = crop_blank_top_bottom(img)
+
+
+        width, height = img.size
+        left = max(0, min(left, width - 1))
+        top = max(0, min(top, height - 1))
+        right = max(0, min(right, width - left - 1))
+        bottom = max(0, min(bottom, height - top - 1))
+        img = img.crop((left, top, width - right, height - bottom))
+
 
         img.thumbnail((largura, altura), Image.LANCZOS)
 
