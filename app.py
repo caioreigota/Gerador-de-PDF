@@ -298,6 +298,46 @@ def pptx_para_imagens():
         return {'error': f'Erro ao processar PPTX: {str(e)}'}, 500
 
 
+@app.route('/redimensionar-imagem', methods=['POST'])
+def redimensionar_imagem():
+    if 'image' not in request.files:
+        return {'error': 'Imagem é obrigatória'}, 400
+
+    largura = request.form.get('largura') or request.form.get('width')
+    altura = request.form.get('altura') or request.form.get('height')
+    if not largura or not altura:
+        return {'error': 'Largura e altura são obrigatórios'}, 400
+
+    try:
+        largura = int(largura)
+        altura = int(altura)
+        if largura <= 0 or altura <= 0:
+            raise ValueError
+    except ValueError:
+        return {'error': 'Largura e altura devem ser números inteiros positivos'}, 400
+
+    try:
+        img_file = request.files['image']
+        img = Image.open(img_file.stream)
+        img = img.resize((largura, altura))
+
+        output = BytesIO()
+        formato = img.format or 'PNG'
+        img.save(output, format=formato)
+        output.seek(0)
+
+        mimetype = img_file.mimetype or f'image/{formato.lower()}'
+        ext = formato.lower()
+        return send_file(
+            output,
+            mimetype=mimetype,
+            as_attachment=True,
+            download_name=f'resized.{ext}'
+        )
+    except Exception as e:
+        return {'error': f'Erro ao redimensionar imagem: {str(e)}'}, 500
+
+
 @app.route('/pptx-para-pdf', methods=['POST'])
 def pptx_para_pdf():
     data = request.get_json()
