@@ -6,7 +6,7 @@ import requests
 import zipfile
 import os
 from pptx import Presentation
-from PIL import Image, ImageDraw, ImageChops
+from PIL import Image, ImageDraw, ImageChops, ImageOps
 from io import BytesIO
 import subprocess
 import gc
@@ -360,19 +360,32 @@ def cortar_redimensionar_imagem():
         img_file = request.files['image']
         img = Image.open(img_file.stream).convert('RGB')
 
+        def crop_blank_top_bottom(im, threshold=250, blank_ratio=0.99):
+            gray = im.convert('L')
+            width, height = gray.size
+            pixels = gray.load()
 
-        bg = Image.new('RGB', img.size, (255, 255, 255))
-        diff = ImageChops.difference(img, bg)
-        bbox = diff.getbbox()
-        if bbox:
-            top = bbox[1]
-            bottom = bbox[3]
-            img = img.crop((0, top, img.width, bottom))
+            def row_is_blank(y):
+                blank = 0
+                for x in range(width):
+                    if pixels[x, y] >= threshold:
+                        blank += 1
+                return blank / width >= blank_ratio
 
-        img = img.resize((largura, altura))
+            top = 0
+            bottom = height - 1
+            while top < height and row_is_blank(top):
+                top += 1
+            while bottom > top and row_is_blank(bottom):
+                bottom -= 1
+            return im.crop((0, top, width, bottom + 1))
+
+        img = crop_blank_top_bottom(img)
+
+        img = ImageOps.fit(img, (largura, altura), method=Image.LANCZOS, centering=(0.5, 0.5))
 
         output = BytesIO()
-        formato = img.format or 'PNG'
+        formato = img_file.mimetype.split('/')[-1].upper() if img_file.mimetype else 'PNG'
         img.save(output, format=formato)
         output.seek(0)
 
