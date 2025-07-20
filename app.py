@@ -360,6 +360,7 @@ def cortar_redimensionar_imagem():
         img_file = request.files['image']
         img = Image.open(img_file.stream).convert('RGB')
 
+
         bg = Image.new('RGB', img.size, (255, 255, 255))
         diff = ImageChops.difference(img, bg)
         bbox = diff.getbbox()
