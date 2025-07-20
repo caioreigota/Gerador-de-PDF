@@ -1,13 +1,14 @@
-name: Trigger EasyPanel Deploy on PR
+name: Deploy to EasyPanel on PR Merge to Main
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened] # dispara ao criar, atualizar ou reabrir PR
+    types: [closed]
     branches:
-      - main  # ou substitua pela sua branch de destino do PR
+      - main
 
 jobs:
-  call-deploy-hook:
+  deploy-on-merge:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
     steps:
