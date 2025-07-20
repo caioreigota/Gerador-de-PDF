@@ -360,19 +360,13 @@ def cortar_redimensionar_imagem():
         img_file = request.files['image']
         img = Image.open(img_file.stream).convert('RGB')
 
-        gray = img.convert('L')
-        thresh = 250
-        pixels = gray.load()
-        top = 0
-        bottom = gray.height
 
-        while top < bottom and all(pixels[x, top] >= thresh for x in range(gray.width)):
-            top += 1
-
-        while bottom > top and all(pixels[x, bottom - 1] >= thresh for x in range(gray.width)):
-            bottom -= 1
-
-        if top > 0 or bottom < gray.height:
+        bg = Image.new('RGB', img.size, (255, 255, 255))
+        diff = ImageChops.difference(img, bg)
+        bbox = diff.getbbox()
+        if bbox:
+            top = bbox[1]
+            bottom = bbox[3]
             img = img.crop((0, top, img.width, bottom))
 
         img = img.resize((largura, altura))
