@@ -19,6 +19,18 @@ from werkzeug.utils import secure_filename
 from urllib.parse import urlparse, unquote
 from PIL import ImageFont
 import imgkit
+from io import BytesIO
+
+# Suporte a DOCX e DOC
+try:
+    from docx import Document  # python-docx
+except Exception:
+    Document = None
+
+try:
+    import textract  # para .doc (requer 'antiword' no sistema)
+except Exception:
+    textract = None
 
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # Limite de 50MB por upload
@@ -65,6 +77,89 @@ def substituir_textos(doc, substituicoes):
                 fontname="helv",
                 overlay=True,
             )
+
+@app.route('/extrair-texto', methods=['POST'])
+def extrair_texto():
+    """
+    Recebe um arquivo (PDF, DOC ou DOCX) via multipart/form-data (campo 'file')
+    e retorna o texto extraído em JSON.
+    Resposta: { "texto": "..." }
+    """
+    uploaded = request.files.get('file')
+    if not uploaded:
+        return jsonify({"error": "Envie o arquivo no campo 'file' (multipart/form-data)."}), 400
+
+    filename = secure_filename(uploaded.filename or '')
+    if not filename:
+        return jsonify({"error": "Nome de arquivo inválido."}), 400
+
+    _, ext = os.path.splitext(filename)
+    ext = (ext or '').lower()
+
+    # Salva em arquivo temporário para lidar com libs que precisam de caminho (ex: textract)
+    with tempfile.NamedTemporaryFile(delete=False, suffix=ext) as tmp:
+        tmp_path = tmp.name
+        uploaded.stream.seek(0)
+        shutil.copyfileobj(uploaded.stream, tmp)
+
+    try:
+        if ext == '.pdf':
+            texto = _extract_text_pdf(tmp_path)
+        elif ext == '.docx':
+            texto = _extract_text_docx(tmp_path)
+        elif ext == '.doc':
+            texto = _extract_text_doc(tmp_path)
+        else:
+            return jsonify({"error": f"Extensão não suportada: {ext}. Use PDF, DOC ou DOCX."}), 415
+
+        return jsonify({"texto": texto})
+    except Exception as e:
+        return jsonify({"error": f"Falha ao extrair texto: {str(e)}"}), 500
+    finally:
+        try:
+            os.remove(tmp_path)
+        except Exception:
+            pass
+
+
+def _extract_text_pdf(path: str) -> str:
+    doc = fitz.open(path)
+    try:
+        parts = []
+        for page in doc:
+            parts.append(page.get_text("text"))
+        return "\n".join(parts).strip()
+    finally:
+        doc.close()
+
+
+def _extract_text_docx(path: str) -> str:
+    if Document is None:
+        raise RuntimeError("Suporte a DOCX requer 'python-docx' instalado.")
+    d = Document(path)
+    # Parágrafos
+    paras = [p.text for p in d.paragraphs if p.text]
+    # Tabelas
+    tables_text = []
+    for t in d.tables:
+        for row in t.rows:
+            cells = [c.text.strip() for c in row.cells]
+            if any(cells):
+                tables_text.append("\t".join(cells))
+    parts = []
+    if paras:
+        parts.append("\n".join(paras))
+    if tables_text:
+        parts.append("\n".join(tables_text))
+    return "\n\n".join(parts).strip()
+
+
+def _extract_text_doc(path: str) -> str:
+    # Usa textract + antiword (no SO) para .doc
+    if textract is None:
+        raise RuntimeError("Suporte a .doc requer 'textract' instalado e o utilitário 'antiword' no sistema.")
+    content = textract.process(path)  # retorna bytes
+    return content.decode('utf-8', errors='replace').strip()
 
 @app.route('/pdf-para-imagem', methods=['POST'])
 def pdf_para_imagem():

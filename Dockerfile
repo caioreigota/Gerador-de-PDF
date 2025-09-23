@@ -1,17 +1,25 @@
-FROM python:3.11-slim
+FROM python:3.11-bullseye
 
-# Instala dependências do sistema e do LibreOffice
-RUN apt-get update && apt-get install -y \
+# Evita prompts interativos no apt
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Dependências do sistema:
+# - wkhtmltopdf (inclui wkhtmltoimage) para o endpoint de imagem HTML
+# - antiword para extrair .doc com textract
+# - fontes e libs gráficas necessárias
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates \
+    curl \
     wkhtmltopdf \
+    antiword \
     xfonts-base \
+    fontconfig \
     libjpeg62-turbo \
     libxrender1 \
     libxtst6 \
     libxext6 \
     libfontconfig1 \
     libfreetype6 \
-    libpng16-16 \
-    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 # Define diretório de trabalho
