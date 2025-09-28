@@ -89,7 +89,7 @@ RUN python -m playwright install --with-deps
   - POST `/html-para-pdf`
   - Form-data (multipart):
     - `file` (arquivo .html) ou `html` (string com HTML)
-    - Opcionais: `format` (ex.: A4), `margin_top`, `margin_right`, `margin_bottom`, `margin_left`
+    - Opcionais: `format` (ex.: A4), `margin_top`, `margin_right`, `margin_bottom`, `margin_left`, `filename` (ou `nome_arquivo`) para definir o nome do PDF de saída
   - Resposta: arquivo PDF (attachment)
 
 - Gerar imagem de vaga a partir de PDF base
@@ -145,7 +145,9 @@ curl -X POST http://localhost:5000/render \
 ```
 curl -X POST http://localhost:5000/html-para-pdf \
   -F "file=@/caminho/arquivo.html" \
-  -F "format=A4" --output convertido.pdf
+  -F "format=A4" \
+  -F "filename=meu-documento.pdf" \
+  --output meu-documento.pdf
 ```
 
 

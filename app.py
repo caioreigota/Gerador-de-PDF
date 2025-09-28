@@ -888,6 +888,14 @@ def html_para_pdf():
     m_right = request.form.get('margin_right')
     m_bottom = request.form.get('margin_bottom')
     m_left = request.form.get('margin_left')
+    # nome do arquivo desejado
+    desired_name = request.form.get('filename') or request.form.get('nome_arquivo')
+    if desired_name:
+        desired_name = secure_filename(desired_name)
+        if not desired_name.lower().endswith('.pdf'):
+            desired_name = f"{desired_name}.pdf"
+        if not desired_name or desired_name == '.pdf':
+            desired_name = None
 
     # Diretório temporário com limpeza pós-resposta (compatível com Windows)
     tmpdir_obj = tempfile.TemporaryDirectory(prefix="html2pdf_")
@@ -937,7 +945,7 @@ def html_para_pdf():
             str(pdf_path),
             mimetype="application/pdf",
             as_attachment=True,
-            download_name="convertido.pdf",
+            download_name=(desired_name or "convertido.pdf"),
         )
     except Exception as e:
         return jsonify({"error": f"Falha ao converter HTML em PDF: {str(e)}"}), 500
