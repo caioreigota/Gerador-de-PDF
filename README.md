@@ -85,6 +85,13 @@ RUN python -m playwright install --with-deps
   - Body (JSON): `{ "html_url": "https://.../arquivo.html", "substituicoes": { "nome": "João" } }`
   - Resposta: arquivo PNG (attachment)
 
+- HTML → PDF
+  - POST `/html-para-pdf`
+  - Form-data (multipart):
+    - `file` (arquivo .html) ou `html` (string com HTML)
+    - Opcionais: `format` (ex.: A4), `margin_top`, `margin_right`, `margin_bottom`, `margin_left`
+  - Resposta: arquivo PDF (attachment)
+
 - Gerar imagem de vaga a partir de PDF base
   - POST `/gerar-imagem-vaga`
   - Body (JSON): `{ "pdf_url": "https://.../modelo.pdf", "substituicoes": { "cargo": "...", "localizacao": "...", ... } }`
@@ -134,6 +141,13 @@ curl -X POST http://localhost:5000/render \
   -F "content_seconds=6" -F "target_fps=30" --output render.mp4
 ```
 
+- HTML → PDF:
+```
+curl -X POST http://localhost:5000/html-para-pdf \
+  -F "file=@/caminho/arquivo.html" \
+  -F "format=A4" --output convertido.pdf
+```
+
 
 ## Configurações
 
@@ -155,4 +169,3 @@ curl -X POST http://localhost:5000/render \
 
 - Em Windows, exclusão de temporários é feita após resposta para evitar lock de arquivo.
 - Se não for usar `/render`, Playwright/FFmpeg podem ser opcionais.
-

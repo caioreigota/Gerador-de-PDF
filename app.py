@@ -863,6 +863,86 @@ def health():
     return {"ok": True}
 
 
+@app.route('/html-para-pdf', methods=['POST'])
+def html_para_pdf():
+    """
+    Converte um HTML recebido em PDF.
+    Aceita:
+      - multipart/form-data com campo 'file' (arquivo .html)
+      - OU multipart/form-data com campo 'html' (texto bruto do HTML)
+
+    Parâmetros opcionais (form-data):
+      - format: tamanho da página (ex.: A4, Letter). Padrão: A4
+      - margin_top, margin_right, margin_bottom, margin_left (em mm, px, etc. wkhtmltopdf)
+
+    Resposta: application/pdf (attachment)
+    """
+    html_file = request.files.get('file')
+    html_text = request.form.get('html')
+    if not html_file and not html_text:
+        return jsonify({"error": "Envie 'file' (multipart) OU 'html' (texto)."}), 400
+
+    # Parâmetros opcionais de página/margem
+    page_format = request.form.get('format', 'A4')
+    m_top = request.form.get('margin_top')
+    m_right = request.form.get('margin_right')
+    m_bottom = request.form.get('margin_bottom')
+    m_left = request.form.get('margin_left')
+
+    # Diretório temporário com limpeza pós-resposta (compatível com Windows)
+    tmpdir_obj = tempfile.TemporaryDirectory(prefix="html2pdf_")
+    tmpdir = Path(tmpdir_obj.name)
+
+    @after_this_request
+    def _cleanup(response):
+        for _ in range(10):
+            try:
+                tmpdir_obj.cleanup()
+                break
+            except PermissionError:
+                time.sleep(0.3)
+        return response
+
+    try:
+        html_path = write_temp_html(tmpdir, html_text=html_text, html_file=html_file)
+        pdf_path = tmpdir / "output.pdf"
+
+        # Monta comando wkhtmltopdf
+        cmd = [
+            "wkhtmltopdf",
+            "--enable-local-file-access",
+            "--print-media-type",
+        ]
+        if page_format:
+            cmd += ["-s", str(page_format)]
+        if m_top:
+            cmd += ["-T", str(m_top)]
+        if m_right:
+            cmd += ["-R", str(m_right)]
+        if m_bottom:
+            cmd += ["-B", str(m_bottom)]
+        if m_left:
+            cmd += ["-L", str(m_left)]
+
+        cmd += [str(html_path), str(pdf_path)]
+
+        try:
+            subprocess.run(cmd, check=True)
+        except FileNotFoundError:
+            return jsonify({
+                "error": "wkhtmltopdf não encontrado. Instale-o no sistema ou use a imagem Docker fornecida."
+            }), 500
+
+        return send_file(
+            str(pdf_path),
+            mimetype="application/pdf",
+            as_attachment=True,
+            download_name="convertido.pdf",
+        )
+    except Exception as e:
+        return jsonify({"error": f"Falha ao converter HTML em PDF: {str(e)}"}), 500
+
+
 @app.route("/render", methods=["POST"])
 def render():
     """
