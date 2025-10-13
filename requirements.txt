@@ -7,3 +7,4 @@ imgkit==1.2.1
 playwright==1.45.0
 python-docx==0.8.11
 textract==1.6.5
+pdf2docx==0.5.6

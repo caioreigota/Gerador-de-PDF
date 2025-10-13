@@ -92,6 +92,11 @@ RUN python -m playwright install --with-deps
     - Opcionais: `format` (ex.: A4), `margin_top`, `margin_right`, `margin_bottom`, `margin_left`, `filename` (ou `nome_arquivo`) para definir o nome do PDF de saída
   - Resposta: arquivo PDF (attachment)
 
+- HTML ? Imagem
+  - POST /html-para-imagem`n  - Form-data (multipart):
+    - ile (arquivo .html) ou html (string com HTML)
+    - Opcionais: ormat (png|jpeg|webp, padr�o: png), width, height (tamanho de renderiza��o), out_width, out_height (tamanho FINAL), it (contain/cover/ill), g (hex para padding), quality (1�100 p/ JPEG/WEBP), 	ransparent (PNG/WEBP), ilename`n  - Resposta: arquivo de imagem (attachment)
+
 - Gerar imagem de vaga a partir de PDF base
   - POST `/gerar-imagem-vaga`
   - Body (JSON): `{ "pdf_url": "https://.../modelo.pdf", "substituicoes": { "cargo": "...", "localizacao": "...", ... } }`
@@ -150,6 +155,22 @@ curl -X POST http://localhost:5000/html-para-pdf \
   --output meu-documento.pdf
 ```
 
+- HTML → Imagem (PNG):
+```
+curl -X POST http://localhost:5000/html-para-imagem \
+  -F "file=@/caminho/arquivo.html" \
+  -F "format=png" -F "width=1080" -F "height=1080" \
+  --output saida.png
+```
+
+- HTML → Imagem (JPEG com qualidade):
+```
+curl -X POST http://localhost:5000/html-para-imagem \
+  -F "html=<h1>Olá</h1>" \
+  -F "format=jpeg" -F "quality=90" \
+  --output saida.jpg
+```
+
 
 ## Configurações
 
@@ -171,3 +192,6 @@ curl -X POST http://localhost:5000/html-para-pdf \
 
 - Em Windows, exclusão de temporários é feita após resposta para evitar lock de arquivo.
 - Se não for usar `/render`, Playwright/FFmpeg podem ser opcionais.
+
+
+
