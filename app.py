@@ -58,6 +58,60 @@ except Exception:
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # Limite de 50MB por upload
 
+# ------------------------ CORS (simples e configurável) ------------------------
+# Permite chamadas do frontend (p.ex. https://app.simcarreira.com.br)
+# Configure via envs:
+#   CORS_ALLOW_ORIGINS="https://app.simcarreira.com.br,https://seu-outro-dominio.com"  (use "*" para todos)
+#   CORS_ALLOW_HEADERS="Content-Type, Authorization, X-Requested-With, Template-Url, X-Template-Url"
+#   CORS_ALLOW_CREDENTIALS="false"  (true/false)
+#   CORS_MAX_AGE="86400"
+_CORS_ALLOW_ORIGINS = os.getenv("CORS_ALLOW_ORIGINS", "https://app.simcarreira.com.br").split(",")
+_CORS_ALLOW_ORIGINS = {o.strip() for o in _CORS_ALLOW_ORIGINS if o.strip()}
+_CORS_ALLOW_HEADERS = os.getenv(
+    "CORS_ALLOW_HEADERS",
+    "Content-Type, Authorization, X-Requested-With, Template-Url, X-Template-Url",
+)
+_CORS_ALLOW_CREDENTIALS = os.getenv("CORS_ALLOW_CREDENTIALS", "false").lower() in ("1", "true", "yes", "y")
+_CORS_MAX_AGE = os.getenv("CORS_MAX_AGE", "86400")
+
+def _resolve_cors_origin(origin: str | None) -> str | None:
+    if not origin:
+        return None
+    if "*" in _CORS_ALLOW_ORIGINS:
+        # Se credenciais estiverem ativas, precisa refletir a origem ao invés de '*'
+        return origin if _CORS_ALLOW_CREDENTIALS else "*"
+    return origin if origin in _CORS_ALLOW_ORIGINS else None
+
+@app.before_request
+def _cors_preflight():
+    if request.method == "OPTIONS":
+        from flask import make_response
+        allow_origin = _resolve_cors_origin(request.headers.get("Origin"))
+        resp = make_response("", 204)
+        if allow_origin:
+            resp.headers["Access-Control-Allow-Origin"] = allow_origin
+            resp.headers["Vary"] = "Origin"
+        resp.headers["Access-Control-Allow-Methods"] = "GET,POST,OPTIONS"
+        resp.headers["Access-Control-Allow-Headers"] = _CORS_ALLOW_HEADERS
+        resp.headers["Access-Control-Max-Age"] = _CORS_MAX_AGE
+        if _CORS_ALLOW_CREDENTIALS and allow_origin:
+            resp.headers["Access-Control-Allow-Credentials"] = "true"
+        return resp
+
+@app.after_request
+def _cors_headers(resp):
+    allow_origin = _resolve_cors_origin(request.headers.get("Origin"))
+    if allow_origin:
+        resp.headers["Access-Control-Allow-Origin"] = allow_origin
+        resp.headers["Vary"] = "Origin"
+        resp.headers["Access-Control-Allow-Methods"] = "GET,POST,OPTIONS"
+        resp.headers["Access-Control-Allow-Headers"] = _CORS_ALLOW_HEADERS
+        resp.headers["Access-Control-Max-Age"] = _CORS_MAX_AGE
+        if _CORS_ALLOW_CREDENTIALS:
+            resp.headers["Access-Control-Allow-Credentials"] = "true"
+    return resp
+# -----------------------------------------------------------------------------
+
 def substituir_textos(doc, substituicoes):
     for page in doc:
         insercoes = []
