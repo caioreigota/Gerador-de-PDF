@@ -1,0 +1,3094 @@
+{
+  "nodes": [
+    {
+      "id": "app_py",
+      "label": "app.py",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_resolve_cors_origin",
+      "label": "_resolve_cors_origin()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L77"
+    },
+    {
+      "id": "str",
+      "label": "str",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L77"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_cors_preflight",
+      "label": "_cors_preflight()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L86"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_cors_headers",
+      "label": "_cors_headers()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L102"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_substituir_textos",
+      "label": "substituir_textos()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L115"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_extrair_texto",
+      "label": "extrair_texto()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L159"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_extract_text_pdf",
+      "label": "_extract_text_pdf()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L202"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_extract_text_docx",
+      "label": "_extract_text_docx()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L213"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_extract_text_doc",
+      "label": "_extract_text_doc()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L234"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_set_paragraph_bottom_border",
+      "label": "_set_paragraph_bottom_border()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L242"
+    },
+    {
+      "id": "int",
+      "label": "int",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L242"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_set_doc_defaults",
+      "label": "_set_doc_defaults()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L263"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_add_section_title",
+      "label": "_add_section_title()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L289"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_add_text_paragraphs",
+      "label": "_add_text_paragraphs()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L304"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_add_bullet",
+      "label": "_add_bullet()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L315"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_gerar_curriculo_docx",
+      "label": "gerar_curriculo_docx()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L329"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_build_text_blocks_from_payload",
+      "label": "_build_text_blocks_from_payload()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L546"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_replace_placeholders_in_paragraph",
+      "label": "_replace_placeholders_in_paragraph()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L645"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_replace_placeholders_in_doc",
+      "label": "_replace_placeholders_in_doc()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L665"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_gerar_docx_de_template",
+      "label": "gerar_docx_de_template()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L680"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_pdf_para_imagem",
+      "label": "pdf_para_imagem()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L742"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_preencher_pdf_url",
+      "label": "preencher_pdf_url()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L786"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_preencher_html_url",
+      "label": "preencher_html_url()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L820"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_gerar_imagem_vaga",
+      "label": "gerar_imagem_vaga()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L852"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_pptx_para_imagens",
+      "label": "pptx_para_imagens()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L930"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_redimensionar_imagem",
+      "label": "redimensionar_imagem()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L979"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_cortar_redimensionar_imagem",
+      "label": "cortar_redimensionar_imagem()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L1019"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_pptx_para_pdf",
+      "label": "pptx_para_pdf()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L1116"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_ensure_ffmpeg",
+      "label": "ensure_ffmpeg()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L1206"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_file_url",
+      "label": "file_url()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L1211"
+    },
+    {
+      "id": "path",
+      "label": "Path",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L1211"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_has_wkhtmltopdf",
+      "label": "has_wkhtmltopdf()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L1215"
+    },
+    {
+      "id": "bool",
+      "label": "bool",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L1215"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_has_wkhtmltoimage",
+      "label": "has_wkhtmltoimage()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L1219"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_measure_body_size",
+      "label": "measure_body_size()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L1224"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_prepare_page",
+      "label": "prepare_page()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L1269"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_chromium_screenshot",
+      "label": "chromium_screenshot()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L1322"
+    },
+    {
+      "id": "float",
+      "label": "float",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L1322"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_record_webm",
+      "label": "record_webm()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L1399"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_video_duration",
+      "label": "video_duration()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L1435"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_detect_scene_changes",
+      "label": "detect_scene_changes()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L1454"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_compute_trim",
+      "label": "compute_trim()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L1479"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_webm_to_mp4_precise",
+      "label": "webm_to_mp4_precise()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L1503"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_write_temp_html",
+      "label": "write_temp_html()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L1545"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_health",
+      "label": "health()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L1564"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_needs_modern_renderer",
+      "label": "_needs_modern_renderer()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L1568"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_html_para_imagem",
+      "label": "html_para_imagem()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L1591"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_html_para_pdf",
+      "label": "html_para_pdf()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L2015"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_render",
+      "label": "render()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L2103"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_pdf_para_docx",
+      "label": "pdf_para_docx()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L2235"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_rationale_160",
+      "label": "Recebe um arquivo (PDF, DOC ou DOCX) via multipart/form-data (campo 'file')",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L160"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_rationale_243",
+      "label": "Adiciona uma borda inferior (linha) ao parágrafo via OXML.     size_eights: esp",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L243"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_rationale_264",
+      "label": "Configura tamanho de página, margens e fonte padrão conforme especificação.",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L264"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_rationale_305",
+      "label": "Adiciona parágrafos simples (respeitando quebras de linha).",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L305"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_rationale_330",
+      "label": "Gera um .docx de currículo a partir do JSON fornecido na especificação.      A",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L330"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_rationale_547",
+      "label": "Monta mapeamento de placeholders -> texto a partir do JSON de entrada.",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L547"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_rationale_681",
+      "label": "Baixa um arquivo .docx de 'template_url' e substitui placeholders [CHAVE]     c",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L681"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_rationale_1220",
+      "label": "Verifica se o binário wkhtmltoimage está disponível no PATH.",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L1220"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_rationale_1225",
+      "label": "Abre SEM gravação, mede o tamanho real do <body> e devolve (w,h).",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L1225"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_rationale_1334",
+      "label": "Renderiza o HTML com Chromium/Playwright e retorna o caminho de um PNG temporári",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L1334"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_rationale_1546",
+      "label": "Grava o HTML recebido (texto ou arquivo enviado) no tmpdir e retorna o caminho.",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L1546"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_rationale_1569",
+      "label": "Heurística: detecta uso de CSS moderno (grid/flex) e outras pistas.     Se enco",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L1569"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_rationale_1592",
+      "label": "Converte um HTML em imagem.     Aceita:       - multipart/form-data com campo",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L1592"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_rationale_2016",
+      "label": "Converte um HTML recebido em PDF.     Aceita:       - multipart/form-data com",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L2016"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_rationale_2104",
+      "label": "POST /render     Form-data:       - file: arquivo .html  (opcional se mandar '",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L2104"
+    },
+    {
+      "id": "gerador_de_pdf_1_app_rationale_2236",
+      "label": "Converte um PDF em um arquivo .docx com opção EDITÁVEL.     - Modo 'editable' (",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L2236"
+    },
+    {
+      "id": "app_flask_service",
+      "label": "Flask Media Conversion Service",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "app_text_extraction",
+      "label": "Document Text Extraction",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "app_html_pdf_conversion",
+      "label": "HTML to PDF Conversion",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "app_html_image_conversion",
+      "label": "HTML to Image Conversion",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "app_html_video_rendering",
+      "label": "HTML to MP4 Rendering",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "app_pdf_placeholder_fill",
+      "label": "PDF Placeholder Filling",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "app_pdf_docx_conversion",
+      "label": "PDF to DOCX Conversion",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "readme_project_overview",
+      "label": "Project Feature Overview",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "requirements_runtime_stack",
+      "label": "Python Runtime Dependencies",
+      "file_type": "document",
+      "source_file": "requirements.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "workflow_pr_deploy",
+      "label": "PR Deploy Trigger Workflow",
+      "file_type": "code",
+      "source_file": ".github/workflows/main.yml",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "app_py",
+      "target": "flask",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "fitz",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "tempfile",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "requests",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "zipfile",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "re",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "shutil",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "time",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "pptx",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "pil",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "io",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "subprocess",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gc",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "playwright_sync_api",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "werkzeug_utils",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "urllib_parse",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "pil",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "imgkit",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "io",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "docx",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "docx_shared",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "docx_shared",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "docx_enum_text",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "docx_oxml",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "docx_oxml_ns",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "textract",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "pdf2docx",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_resolve_cors_origin",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_resolve_cors_origin",
+      "target": "str",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_resolve_cors_origin",
+      "target": "str",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_cors_preflight",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L86",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_cors_headers",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_substituir_textos",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L115",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_extrair_texto",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L159",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_extract_text_pdf",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L202",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_extract_text_pdf",
+      "target": "str",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L202",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_extract_text_pdf",
+      "target": "str",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L202",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_extract_text_docx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L213",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_extract_text_docx",
+      "target": "str",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L213",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_extract_text_docx",
+      "target": "str",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L213",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_extract_text_doc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L234",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_extract_text_doc",
+      "target": "str",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L234",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_extract_text_doc",
+      "target": "str",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L234",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_set_paragraph_bottom_border",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L242",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_set_paragraph_bottom_border",
+      "target": "int",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L242",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_set_paragraph_bottom_border",
+      "target": "str",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L242",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_set_doc_defaults",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L263",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_add_section_title",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L289",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_add_section_title",
+      "target": "str",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L289",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_add_text_paragraphs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L304",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_add_text_paragraphs",
+      "target": "str",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L304",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_add_bullet",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L315",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_add_bullet",
+      "target": "str",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L315",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_gerar_curriculo_docx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L329",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_build_text_blocks_from_payload",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L546",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_replace_placeholders_in_paragraph",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L645",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_replace_placeholders_in_doc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L665",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_gerar_docx_de_template",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L680",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_pdf_para_imagem",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L742",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_preencher_pdf_url",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L786",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_preencher_html_url",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L820",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_gerar_imagem_vaga",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L852",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_pptx_para_imagens",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L930",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_redimensionar_imagem",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L979",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_cortar_redimensionar_imagem",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1019",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_pptx_para_pdf",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1116",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_ensure_ffmpeg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1206",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_file_url",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1211",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_file_url",
+      "target": "path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1211",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_file_url",
+      "target": "str",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1211",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_has_wkhtmltopdf",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1215",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_has_wkhtmltopdf",
+      "target": "bool",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1215",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_has_wkhtmltoimage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1219",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_has_wkhtmltoimage",
+      "target": "bool",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1219",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_measure_body_size",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1224",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_measure_body_size",
+      "target": "path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1224",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_measure_body_size",
+      "target": "int",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1224",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_measure_body_size",
+      "target": "int",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1224",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_prepare_page",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1269",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_prepare_page",
+      "target": "bool",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1269",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_prepare_page",
+      "target": "int",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1269",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_chromium_screenshot",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1322",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_chromium_screenshot",
+      "target": "path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1322",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_chromium_screenshot",
+      "target": "int",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1322",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_chromium_screenshot",
+      "target": "int",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1322",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_chromium_screenshot",
+      "target": "bool",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1322",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_chromium_screenshot",
+      "target": "float",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1322",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_chromium_screenshot",
+      "target": "path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1322",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_chromium_screenshot",
+      "target": "bool",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1322",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_chromium_screenshot",
+      "target": "str",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1322",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_chromium_screenshot",
+      "target": "str",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1322",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_chromium_screenshot",
+      "target": "path",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1322",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_record_webm",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1399",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_record_webm",
+      "target": "path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1399",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_record_webm",
+      "target": "float",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1399",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_record_webm",
+      "target": "int",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1399",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_record_webm",
+      "target": "int",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1399",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_record_webm",
+      "target": "path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1399",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_record_webm",
+      "target": "bool",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1399",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_record_webm",
+      "target": "path",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1399",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_video_duration",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1435",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_video_duration",
+      "target": "path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1435",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_video_duration",
+      "target": "float",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1435",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_detect_scene_changes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1454",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_detect_scene_changes",
+      "target": "path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1454",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_detect_scene_changes",
+      "target": "float",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1454",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_detect_scene_changes",
+      "target": "float",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1454",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_compute_trim",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1479",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_compute_trim",
+      "target": "path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1479",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_compute_trim",
+      "target": "float",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1479",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_compute_trim",
+      "target": "float",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1479",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_compute_trim",
+      "target": "float",
+      "relation": "references",
+      "context": "generic_arg",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1479",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_webm_to_mp4_precise",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1503",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_webm_to_mp4_precise",
+      "target": "path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1503",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_webm_to_mp4_precise",
+      "target": "path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1503",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_webm_to_mp4_precise",
+      "target": "float",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1503",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_webm_to_mp4_precise",
+      "target": "float",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1503",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_webm_to_mp4_precise",
+      "target": "int",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1503",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_webm_to_mp4_precise",
+      "target": "int",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1503",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_webm_to_mp4_precise",
+      "target": "int",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1503",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_write_temp_html",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1545",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_write_temp_html",
+      "target": "path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1545",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_write_temp_html",
+      "target": "str",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1545",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_write_temp_html",
+      "target": "path",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1545",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_health",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1564",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_needs_modern_renderer",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1568",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_needs_modern_renderer",
+      "target": "path",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1568",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_needs_modern_renderer",
+      "target": "bool",
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1568",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_html_para_imagem",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1591",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_html_para_pdf",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L2015",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_render",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L2103",
+      "weight": 1.0
+    },
+    {
+      "source": "app_py",
+      "target": "gerador_de_pdf_1_app_pdf_para_docx",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L2235",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_cors_preflight",
+      "target": "gerador_de_pdf_1_app_resolve_cors_origin",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_cors_headers",
+      "target": "gerador_de_pdf_1_app_resolve_cors_origin",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L103",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_extrair_texto",
+      "target": "gerador_de_pdf_1_app_extract_text_pdf",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L184",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_extrair_texto",
+      "target": "gerador_de_pdf_1_app_extract_text_docx",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L186",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_extrair_texto",
+      "target": "gerador_de_pdf_1_app_extract_text_doc",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L188",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_extrair_texto",
+      "target": "str",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L194",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_set_paragraph_bottom_border",
+      "target": "str",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L258",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_add_text_paragraphs",
+      "target": "str",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L308",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_gerar_curriculo_docx",
+      "target": "str",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L367",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_gerar_curriculo_docx",
+      "target": "gerador_de_pdf_1_app_build_text_blocks_from_payload",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L372",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_gerar_curriculo_docx",
+      "target": "gerador_de_pdf_1_app_replace_placeholders_in_doc",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L373",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_gerar_curriculo_docx",
+      "target": "gerador_de_pdf_1_app_set_doc_defaults",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L390",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_gerar_curriculo_docx",
+      "target": "gerador_de_pdf_1_app_set_paragraph_bottom_border",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L438",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_gerar_curriculo_docx",
+      "target": "gerador_de_pdf_1_app_add_section_title",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L451",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_gerar_curriculo_docx",
+      "target": "gerador_de_pdf_1_app_add_text_paragraphs",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L452",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_gerar_curriculo_docx",
+      "target": "gerador_de_pdf_1_app_add_bullet",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L461",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_build_text_blocks_from_payload",
+      "target": "str",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L569",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_replace_placeholders_in_doc",
+      "target": "str",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L667",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_replace_placeholders_in_doc",
+      "target": "gerador_de_pdf_1_app_replace_placeholders_in_paragraph",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L670",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_gerar_docx_de_template",
+      "target": "str",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L717",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_gerar_docx_de_template",
+      "target": "gerador_de_pdf_1_app_build_text_blocks_from_payload",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L724",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_gerar_docx_de_template",
+      "target": "gerador_de_pdf_1_app_replace_placeholders_in_doc",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L725",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_pdf_para_imagem",
+      "target": "str",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L751",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_preencher_pdf_url",
+      "target": "str",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L795",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_preencher_pdf_url",
+      "target": "gerador_de_pdf_1_app_substituir_textos",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L803",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_preencher_html_url",
+      "target": "str",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L830",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_gerar_imagem_vaga",
+      "target": "str",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L878",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_pptx_para_imagens",
+      "target": "str",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L939",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_redimensionar_imagem",
+      "target": "int",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L989",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_redimensionar_imagem",
+      "target": "str",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1015",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_cortar_redimensionar_imagem",
+      "target": "int",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1038",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_cortar_redimensionar_imagem",
+      "target": "str",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1112",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_pptx_para_pdf",
+      "target": "str",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1125",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_measure_body_size",
+      "target": "gerador_de_pdf_1_app_file_url",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1238",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_measure_body_size",
+      "target": "int",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1261",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_prepare_page",
+      "target": "int",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1317",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_chromium_screenshot",
+      "target": "gerador_de_pdf_1_app_measure_body_size",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1337",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_chromium_screenshot",
+      "target": "path",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1345",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_chromium_screenshot",
+      "target": "gerador_de_pdf_1_app_file_url",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1360",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_chromium_screenshot",
+      "target": "gerador_de_pdf_1_app_prepare_page",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1361",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_chromium_screenshot",
+      "target": "int",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1391",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_chromium_screenshot",
+      "target": "str",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1394",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_chromium_screenshot",
+      "target": "bool",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1394",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_record_webm",
+      "target": "str",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1415",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_record_webm",
+      "target": "gerador_de_pdf_1_app_file_url",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1422",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_record_webm",
+      "target": "gerador_de_pdf_1_app_prepare_page",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1423",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_record_webm",
+      "target": "int",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1425",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_video_duration",
+      "target": "str",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1445",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_video_duration",
+      "target": "float",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1449",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_detect_scene_changes",
+      "target": "str",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1459",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_detect_scene_changes",
+      "target": "float",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1473",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_compute_trim",
+      "target": "gerador_de_pdf_1_app_video_duration",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1488",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_compute_trim",
+      "target": "gerador_de_pdf_1_app_detect_scene_changes",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1491",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_webm_to_mp4_precise",
+      "target": "str",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1518",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_write_temp_html",
+      "target": "path",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1558",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_html_para_imagem",
+      "target": "gerador_de_pdf_1_app_has_wkhtmltoimage",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1626",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_html_para_imagem",
+      "target": "gerador_de_pdf_1_app_has_wkhtmltopdf",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1626",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_html_para_imagem",
+      "target": "int",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1639",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_html_para_imagem",
+      "target": "str",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1654",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_html_para_imagem",
+      "target": "path",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1669",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_html_para_imagem",
+      "target": "gerador_de_pdf_1_app_write_temp_html",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1682",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_html_para_imagem",
+      "target": "gerador_de_pdf_1_app_needs_modern_renderer",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1686",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_html_para_imagem",
+      "target": "float",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1694",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_html_para_imagem",
+      "target": "gerador_de_pdf_1_app_chromium_screenshot",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1729",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_html_para_imagem",
+      "target": "gerador_de_pdf_1_app_file_url",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1748",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_html_para_imagem",
+      "target": "gerador_de_pdf_1_app_prepare_page",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1749",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_html_para_imagem",
+      "target": "bool",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1769",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_html_para_pdf",
+      "target": "path",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L2050",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_html_para_pdf",
+      "target": "gerador_de_pdf_1_app_write_temp_html",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L2063",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_html_para_pdf",
+      "target": "str",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L2073",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_render",
+      "target": "gerador_de_pdf_1_app_ensure_ffmpeg",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L2118",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_render",
+      "target": "str",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L2120",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_render",
+      "target": "float",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L2129",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_render",
+      "target": "int",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L2133",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_render",
+      "target": "path",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L2172",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_render",
+      "target": "gerador_de_pdf_1_app_write_temp_html",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L2186",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_render",
+      "target": "gerador_de_pdf_1_app_measure_body_size",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L2192",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_render",
+      "target": "gerador_de_pdf_1_app_record_webm",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L2199",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_render",
+      "target": "gerador_de_pdf_1_app_compute_trim",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L2204",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_render",
+      "target": "gerador_de_pdf_1_app_webm_to_mp4_precise",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L2215",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_pdf_para_docx",
+      "target": "str",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L2267",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_pdf_para_docx",
+      "target": "int",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L2274",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_pdf_para_docx",
+      "target": "path",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L2365",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_rationale_160",
+      "target": "gerador_de_pdf_1_app_extrair_texto",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L160",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_rationale_243",
+      "target": "gerador_de_pdf_1_app_set_paragraph_bottom_border",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L243",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_rationale_264",
+      "target": "gerador_de_pdf_1_app_set_doc_defaults",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L264",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_rationale_305",
+      "target": "gerador_de_pdf_1_app_add_text_paragraphs",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L305",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_rationale_330",
+      "target": "gerador_de_pdf_1_app_gerar_curriculo_docx",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L330",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_rationale_547",
+      "target": "gerador_de_pdf_1_app_build_text_blocks_from_payload",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L547",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_rationale_681",
+      "target": "gerador_de_pdf_1_app_gerar_docx_de_template",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L681",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_rationale_1220",
+      "target": "gerador_de_pdf_1_app_has_wkhtmltoimage",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1220",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_rationale_1225",
+      "target": "gerador_de_pdf_1_app_measure_body_size",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1225",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_rationale_1334",
+      "target": "gerador_de_pdf_1_app_chromium_screenshot",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1334",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_rationale_1546",
+      "target": "gerador_de_pdf_1_app_write_temp_html",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1546",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_rationale_1569",
+      "target": "gerador_de_pdf_1_app_needs_modern_renderer",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1569",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_rationale_1592",
+      "target": "gerador_de_pdf_1_app_html_para_imagem",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L1592",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_rationale_2016",
+      "target": "gerador_de_pdf_1_app_html_para_pdf",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L2016",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_rationale_2104",
+      "target": "gerador_de_pdf_1_app_render",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L2104",
+      "weight": 1.0
+    },
+    {
+      "source": "gerador_de_pdf_1_app_rationale_2236",
+      "target": "gerador_de_pdf_1_app_pdf_para_docx",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L2236",
+      "weight": 1.0
+    },
+    {
+      "source": "app_flask_service",
+      "target": "app_text_extraction",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "app_flask_service",
+      "target": "app_html_pdf_conversion",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "app_flask_service",
+      "target": "app_html_image_conversion",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "app_flask_service",
+      "target": "app_html_video_rendering",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "app_flask_service",
+      "target": "app_pdf_placeholder_fill",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "app_flask_service",
+      "target": "app_pdf_docx_conversion",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "app_html_video_rendering",
+      "target": "app_html_image_conversion",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.76,
+      "source_file": "app.py",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "app_pdf_docx_conversion",
+      "target": "app_text_extraction",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.68,
+      "source_file": "app.py",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "app_pdf_placeholder_fill",
+      "target": "app_html_image_conversion",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.67,
+      "source_file": "app.py",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_project_overview",
+      "target": "app_flask_service",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_project_overview",
+      "target": "app_text_extraction",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_project_overview",
+      "target": "app_html_pdf_conversion",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_project_overview",
+      "target": "app_html_image_conversion",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_project_overview",
+      "target": "app_html_video_rendering",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "readme_project_overview",
+      "target": "app_pdf_placeholder_fill",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "requirements_runtime_stack",
+      "target": "app_flask_service",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.88,
+      "source_file": "requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "requirements_runtime_stack",
+      "target": "app_text_extraction",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.91,
+      "source_file": "requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "requirements_runtime_stack",
+      "target": "app_html_video_rendering",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.93,
+      "source_file": "requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "requirements_runtime_stack",
+      "target": "app_pdf_docx_conversion",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.89,
+      "source_file": "requirements.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "workflow_pr_deploy",
+      "target": "app_flask_service",
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.62,
+      "source_file": ".github/workflows/main.yml",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "media_generation_endpoints",
+      "label": "Media Generation Endpoints",
+      "nodes": [
+        "app_html_pdf_conversion",
+        "app_html_image_conversion",
+        "app_html_video_rendering"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.87,
+      "source_file": "app.py"
+    },
+    {
+      "id": "document_transformation_endpoints",
+      "label": "Document Transformation Endpoints",
+      "nodes": [
+        "app_text_extraction",
+        "app_pdf_placeholder_fill",
+        "app_pdf_docx_conversion"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.84,
+      "source_file": "app.py"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

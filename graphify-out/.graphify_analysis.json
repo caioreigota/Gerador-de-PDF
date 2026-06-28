@@ -1,0 +1,264 @@
+{
+  "communities": {
+    "0": [
+      "gerador_de_pdf_1_app_extract_text_doc",
+      "gerador_de_pdf_1_app_extract_text_docx",
+      "gerador_de_pdf_1_app_extract_text_pdf",
+      "gerador_de_pdf_1_app_extrair_texto",
+      "gerador_de_pdf_1_app_gerar_imagem_vaga",
+      "gerador_de_pdf_1_app_pdf_para_imagem",
+      "gerador_de_pdf_1_app_pptx_para_imagens",
+      "gerador_de_pdf_1_app_pptx_para_pdf",
+      "gerador_de_pdf_1_app_preencher_html_url",
+      "gerador_de_pdf_1_app_rationale_160",
+      "str"
+    ],
+    "1": [
+      "app_flask_service",
+      "app_html_image_conversion",
+      "app_html_pdf_conversion",
+      "app_html_video_rendering",
+      "app_pdf_docx_conversion",
+      "app_pdf_placeholder_fill",
+      "app_text_extraction",
+      "readme_project_overview",
+      "requirements_runtime_stack",
+      "workflow_pr_deploy"
+    ],
+    "2": [
+      "gerador_de_pdf_1_app_add_bullet",
+      "gerador_de_pdf_1_app_add_section_title",
+      "gerador_de_pdf_1_app_add_text_paragraphs",
+      "gerador_de_pdf_1_app_gerar_curriculo_docx",
+      "gerador_de_pdf_1_app_rationale_243",
+      "gerador_de_pdf_1_app_rationale_264",
+      "gerador_de_pdf_1_app_rationale_305",
+      "gerador_de_pdf_1_app_rationale_330",
+      "gerador_de_pdf_1_app_set_doc_defaults",
+      "gerador_de_pdf_1_app_set_paragraph_bottom_border"
+    ],
+    "3": [
+      "float",
+      "gerador_de_pdf_1_app_compute_trim",
+      "gerador_de_pdf_1_app_detect_scene_changes",
+      "gerador_de_pdf_1_app_ensure_ffmpeg",
+      "gerador_de_pdf_1_app_rationale_2104",
+      "gerador_de_pdf_1_app_render",
+      "gerador_de_pdf_1_app_video_duration",
+      "gerador_de_pdf_1_app_webm_to_mp4_precise"
+    ],
+    "4": [
+      "bool",
+      "gerador_de_pdf_1_app_has_wkhtmltoimage",
+      "gerador_de_pdf_1_app_has_wkhtmltopdf",
+      "gerador_de_pdf_1_app_html_para_imagem",
+      "gerador_de_pdf_1_app_prepare_page",
+      "gerador_de_pdf_1_app_rationale_1220",
+      "gerador_de_pdf_1_app_rationale_1592",
+      "gerador_de_pdf_1_app_record_webm"
+    ],
+    "5": [
+      "app_py",
+      "gerador_de_pdf_1_app_cors_headers",
+      "gerador_de_pdf_1_app_cors_preflight",
+      "gerador_de_pdf_1_app_health",
+      "gerador_de_pdf_1_app_preencher_pdf_url",
+      "gerador_de_pdf_1_app_resolve_cors_origin",
+      "gerador_de_pdf_1_app_substituir_textos"
+    ],
+    "6": [
+      "gerador_de_pdf_1_app_build_text_blocks_from_payload",
+      "gerador_de_pdf_1_app_gerar_docx_de_template",
+      "gerador_de_pdf_1_app_rationale_547",
+      "gerador_de_pdf_1_app_rationale_681",
+      "gerador_de_pdf_1_app_replace_placeholders_in_doc",
+      "gerador_de_pdf_1_app_replace_placeholders_in_paragraph"
+    ],
+    "7": [
+      "gerador_de_pdf_1_app_chromium_screenshot",
+      "gerador_de_pdf_1_app_file_url",
+      "gerador_de_pdf_1_app_measure_body_size",
+      "gerador_de_pdf_1_app_rationale_1225",
+      "gerador_de_pdf_1_app_rationale_1334",
+      "path"
+    ],
+    "8": [
+      "gerador_de_pdf_1_app_cortar_redimensionar_imagem",
+      "gerador_de_pdf_1_app_pdf_para_docx",
+      "gerador_de_pdf_1_app_rationale_2236",
+      "gerador_de_pdf_1_app_redimensionar_imagem",
+      "int"
+    ],
+    "9": [
+      "gerador_de_pdf_1_app_html_para_pdf",
+      "gerador_de_pdf_1_app_rationale_1546",
+      "gerador_de_pdf_1_app_rationale_2016",
+      "gerador_de_pdf_1_app_write_temp_html"
+    ],
+    "10": [
+      "gerador_de_pdf_1_app_needs_modern_renderer",
+      "gerador_de_pdf_1_app_rationale_1569"
+    ]
+  },
+  "cohesion": {
+    "0": 0.23636363636363636,
+    "1": 0.4444444444444444,
+    "2": 0.2,
+    "3": 0.39285714285714285,
+    "4": 0.39285714285714285,
+    "5": 0.42857142857142855,
+    "6": 0.3333333333333333,
+    "7": 0.5333333333333333,
+    "8": 0.4,
+    "9": 0.5,
+    "10": 1.0
+  },
+  "labels": {
+    "0": "_extract_text_doc() / _extract_text_docx()",
+    "1": "Flask Media Conversion Service / HTML to Image Conversion",
+    "2": "_add_bullet() / _add_section_title()",
+    "3": "float / compute_trim()",
+    "4": "bool / has_wkhtmltoimage()",
+    "5": "app.py / _cors_headers()",
+    "6": "_build_text_blocks_from_payload() / gerar_docx_de_template()",
+    "7": "chromium_screenshot() / file_url()",
+    "8": "cortar_redimensionar_imagem() / pdf_para_docx()",
+    "9": "html_para_pdf() / Grava o HTML recebido (texto ou arquivo enviado) no tmpdir e retorna o caminho.",
+    "10": "_needs_modern_renderer() / Heurística: detecta uso de CSS moderno (grid/flex) e outras pistas.     Se enco"
+  },
+  "gods": [
+    {
+      "id": "str",
+      "label": "str",
+      "degree": 32
+    },
+    {
+      "id": "path",
+      "label": "Path",
+      "degree": 14
+    },
+    {
+      "id": "gerador_de_pdf_1_app_html_para_imagem",
+      "label": "html_para_imagem()",
+      "degree": 14
+    },
+    {
+      "id": "gerador_de_pdf_1_app_render",
+      "label": "render()",
+      "degree": 12
+    },
+    {
+      "id": "int",
+      "label": "int",
+      "degree": 11
+    },
+    {
+      "id": "gerador_de_pdf_1_app_chromium_screenshot",
+      "label": "chromium_screenshot()",
+      "degree": 11
+    },
+    {
+      "id": "gerador_de_pdf_1_app_gerar_curriculo_docx",
+      "label": "gerar_curriculo_docx()",
+      "degree": 10
+    },
+    {
+      "id": "gerador_de_pdf_1_app_record_webm",
+      "label": "record_webm()",
+      "degree": 9
+    },
+    {
+      "id": "app_flask_service",
+      "label": "Flask Media Conversion Service",
+      "degree": 9
+    },
+    {
+      "id": "float",
+      "label": "float",
+      "degree": 8
+    }
+  ],
+  "surprises": [
+    {
+      "source": "PR Deploy Trigger Workflow",
+      "target": "Flask Media Conversion Service",
+      "source_files": [
+        ".github/workflows/main.yml",
+        "app.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "rationale_for",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (code ↔ doc); connects across different repos/directories; peripheral node `PR Deploy Trigger Workflow` unexpectedly reaches hub `Flask Media Conversion Service`"
+    },
+    {
+      "source": "Python Runtime Dependencies",
+      "target": "Flask Media Conversion Service",
+      "source_files": [
+        "requirements.txt",
+        "app.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "rationale_for",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (code ↔ doc); connects across different repos/directories"
+    },
+    {
+      "source": "Python Runtime Dependencies",
+      "target": "Document Text Extraction",
+      "source_files": [
+        "requirements.txt",
+        "app.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "rationale_for",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (code ↔ doc); connects across different repos/directories"
+    },
+    {
+      "source": "Project Feature Overview",
+      "target": "HTML to PDF Conversion",
+      "source_files": [
+        "README.md",
+        "app.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "crosses file types (code ↔ doc); connects across different repos/directories; peripheral node `HTML to PDF Conversion` unexpectedly reaches hub `Project Feature Overview`"
+    },
+    {
+      "source": "Python Runtime Dependencies",
+      "target": "HTML to MP4 Rendering",
+      "source_files": [
+        "requirements.txt",
+        "app.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "rationale_for",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (code ↔ doc); connects across different repos/directories"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `str` connect `_extract_text_doc() / _extract_text_docx()` to `_add_bullet() / _add_section_title()`, `float / compute_trim()`, `bool / has_wkhtmltoimage()`, `app.py / _cors_headers()`, `_build_text_blocks_from_payload() / gerar_docx_de_template()`, `chromium_screenshot() / file_url()`, `cortar_redimensionar_imagem() / pdf_para_docx()`, `html_para_pdf() / Grava o HTML recebido (texto ou arquivo enviado) no tmpdir e retorna o caminho.`?",
+      "why": "High betweenness centrality (0.156) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `html_para_imagem()` connect `bool / has_wkhtmltoimage()` to `_extract_text_doc() / _extract_text_docx()`, `float / compute_trim()`, `app.py / _cors_headers()`, `chromium_screenshot() / file_url()`, `cortar_redimensionar_imagem() / pdf_para_docx()`, `html_para_pdf() / Grava o HTML recebido (texto ou arquivo enviado) no tmpdir e retorna o caminho.`, `_needs_modern_renderer() / Heurística: detecta uso de CSS moderno (grid/flex) e outras pistas.     Se enco`?",
+      "why": "High betweenness centrality (0.045) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `render()` connect `float / compute_trim()` to `_extract_text_doc() / _extract_text_docx()`, `bool / has_wkhtmltoimage()`, `app.py / _cors_headers()`, `chromium_screenshot() / file_url()`, `cortar_redimensionar_imagem() / pdf_para_docx()`, `html_para_pdf() / Grava o HTML recebido (texto ou arquivo enviado) no tmpdir e retorna o caminho.`?",
+      "why": "High betweenness centrality (0.033) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `Recebe um arquivo (PDF, DOC ou DOCX) via multipart/form-data (campo 'file')`, `Adiciona uma borda inferior (linha) ao parágrafo via OXML.     size_eights: esp`, `Configura tamanho de página, margens e fonte padrão conforme especificação.` to the rest of the system?",
+      "why": "17 weakly-connected nodes found - possible documentation gaps or missing edges."
+    }
+  ],
+  "graph": {
+    "nodes": 77,
+    "edges": 191
+  }
+}
