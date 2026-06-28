@@ -31,6 +31,11 @@ try:
 except Exception:
     Document = None
 
+try:
+    from docxcompose.composer import Composer
+except Exception:
+    Composer = None
+
 # Imports adicionais para formatar DOCX (se disponíveis)
 try:
     from docx.shared import Pt, Cm
@@ -674,6 +679,91 @@ def _replace_placeholders_in_doc(doc, mapping: dict):
             for cell in row.cells:
                 for p in cell.paragraphs:
                     _replace_placeholders_in_paragraph(p, mp)
+
+
+def _cleanup_temp_paths(*paths: str):
+    for path in paths:
+        if not path:
+            continue
+        try:
+            if os.path.exists(path):
+                os.remove(path)
+        except Exception:
+            pass
+
+
+@app.route('/merge-docx-url', methods=['POST'])
+def merge_docx_url():
+    """Faz o merge de múltiplos arquivos DOCX remotos e devolve um único DOCX."""
+    data = request.get_json(silent=True)
+    if not isinstance(data, dict):
+        return jsonify({"error": "JSON inválido ou ausente."}), 400
+
+    doc_urls = data.get('document_urls') or data.get('docx_urls') or data.get('urls')
+    if not isinstance(doc_urls, list) or not doc_urls:
+        return jsonify({"error": "Informe uma lista não vazia em 'document_urls'."}), 400
+
+    if Document is None:
+        return jsonify({"error": "Suporte a DOCX requer 'python-docx' instalado."}), 500
+    if Composer is None:
+        return jsonify({"error": "Merge de DOCX requer 'docxcompose' instalado."}), 500
+
+    desired_name = data.get('filename') or data.get('nome_arquivo') or 'documentos_mesclados.docx'
+    desired_name = secure_filename(str(desired_name)) or 'documentos_mesclados.docx'
+    if not desired_name.lower().endswith('.docx'):
+        desired_name = f"{desired_name}.docx"
+
+    temp_paths = []
+    out_path = None
+    try:
+        for idx, url in enumerate(doc_urls, start=1):
+            if not isinstance(url, str) or not url.strip():
+                _cleanup_temp_paths(*temp_paths)
+                return jsonify({"error": f"URL inválida na posição {idx}."}), 400
+
+            try:
+                resp = requests.get(url.strip(), timeout=30)
+                resp.raise_for_status()
+            except requests.RequestException as e:
+                _cleanup_temp_paths(*temp_paths)
+                return jsonify({"error": f"Falha ao baixar o documento {idx}: {str(e)}"}), 400
+
+            tmp_doc = tempfile.NamedTemporaryFile(delete=False, suffix='.docx')
+            tmp_doc.write(resp.content)
+            tmp_doc_path = tmp_doc.name
+            tmp_doc.close()
+            temp_paths.append(tmp_doc_path)
+
+            try:
+                Document(tmp_doc_path)
+            except Exception as e:
+                _cleanup_temp_paths(*temp_paths)
+                return jsonify({"error": f"O arquivo {idx} não é um DOCX válido: {str(e)}"}), 400
+
+        base_doc = Document(temp_paths[0])
+        composer = Composer(base_doc)
+        for path in temp_paths[1:]:
+            composer.append(Document(path))
+
+        out_tmp = tempfile.NamedTemporaryFile(delete=False, suffix='.docx')
+        out_path = out_tmp.name
+        out_tmp.close()
+        composer.save(out_path)
+
+        @after_this_request
+        def _cleanup_response(response):
+            _cleanup_temp_paths(out_path, *temp_paths)
+            return response
+
+        return send_file(
+            out_path,
+            mimetype='application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+            as_attachment=True,
+            download_name=desired_name
+        )
+    except Exception as e:
+        _cleanup_temp_paths(out_path, *temp_paths)
+        return jsonify({"error": f"Falha ao fazer merge dos DOCX: {str(e)}"}), 500
 
 
 @app.route('/gerar-docx-de-template', methods=['POST'])
